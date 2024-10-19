@@ -1968,7 +1968,7 @@ var hiprint = function (t) {
           else {
             if ("barcode" == t.tableTextType) {
               r.html(
-                '<svg width="100%" display="block" height="100%" class="hibarcode_imgcode" preserveAspectRatio="none slice"></svg ><div class="hibarcode_displayValue"></div>'
+                `<svg width="100%" display="block" height="100%" class="hibarcode_imgcode" preserveAspectRatio="none slice" title="${p}"></svg ><div class="hibarcode_displayValue"></div>`
               );
               try {
                 p ? (JsBarcode(r.find(".hibarcode_imgcode")[0], p, {
@@ -8986,7 +8986,7 @@ var hiprint = function (t) {
             // 分离显示条形码文本
             var divMode = this.options.getBarTextMode() == 'text';
             // pub-beta 0.0.57-beta22 移除插件通过 div 添加的文本元素，默认使用 JsBarcode 生成条形码文本
-            a.html('<svg width="100%" display="block" height="100%" class="hibarcode_imgcode" preserveAspectRatio="none slice"></svg>');
+            a.html(`<svg width="100%" display="block" height="100%" class="hibarcode_imgcode" preserveAspectRatio="none slice" title="${n}"></svg>`);
             if (divMode) {
               a.append(`<div class="hibarcode_displayValue" style="white-space:nowrap">`);
             }
